@@ -6,7 +6,7 @@ Aqui você encontra nossos Smash Burgers, Burgers Premium, Combos, Porções e B
 
 Acesse o cardápio completo online:
 
-👉 [Ver Cardápio Online]([https://seu-usuario.github.io/nome-do-repositorio/](https://rafaelbdroid.github.io/rockngrill/))
+👉 [Ver Cardápio Online](([https://seu-usuario.github.io/nome-do-repositorio/](https://rafaelbdroid.github.io/rockngrill/))
 
 ---
 
