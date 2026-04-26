@@ -1,99 +1,170 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rock 'n Grill - Cardápio</title>
-  <style>
-    body {
-      background-color: #111;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-    h1, h2, h3 {
-      color: #e60000;
-    }
-    .button {
-      background-color: #e60000;
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      margin: 5px;
-      border-radius: 5px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .button img {
-      width: 20px;
-      height: 20px;
-    }
-    .button:hover {
-      background-color: #ff3333;
-    }
-    .section {
-      margin-top: 30px;
-    }
-    .box {
-      background-color: #222;
-      padding: 15px;
-      margin: 10px 0;
-      border-radius: 8px;
-      border-left: 5px solid #e60000;
-      transition: transform 0.2s, background-color 0.2s;
-    }
-    .box:hover {
-      transform: scale(1.02);
-      background-color: #2a2a2a;
-    }
-    .combo {
-      background-color: #2b0000;
-      border-left: 5px solid #ff0000;
-    }
-    p {
-      margin: 5px 0;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rock 'n Grill - Cardápio</title>
+
+<style>
+body {
+  background-color: #111;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  color: #e60000;
+}
+
+/* BOTÕES */
+.button {
+  background: linear-gradient(45deg, #e60000, #ff3333);
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  margin: 5px;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s;
+}
+
+.button img {
+  width: 20px;
+  height: 20px;
+}
+
+/* brilho */
+.button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: 0.5s;
+}
+
+.button:hover::after {
+  left: 100%;
+}
+
+/* clique */
+.button:active {
+  transform: scale(0.95);
+}
+
+.button:hover {
+  box-shadow: 0 0 10px #ff3333;
+}
+
+/* SEÇÕES */
+.section {
+  margin-top: 30px;
+}
+
+/* CARDS */
+.box {
+  background-color: #222;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border-left: 5px solid #e60000;
+  transition: transform 0.2s, background-color 0.2s;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.5s ease forwards;
+}
+
+.box:nth-child(1){animation-delay:0.1s;}
+.box:nth-child(2){animation-delay:0.2s;}
+.box:nth-child(3){animation-delay:0.3s;}
+.box:nth-child(4){animation-delay:0.4s;}
+.box:nth-child(5){animation-delay:0.5s;}
+
+.box:hover {
+  transform: scale(1.02);
+  background-color: #2a2a2a;
+}
+
+/* MAIS PEDIDOS */
+.combo {
+  background-color: #2b0000;
+  border-left: 5px solid #ff0000;
+  box-shadow: 0 0 10px rgba(255,0,0,0.3);
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+p {
+  margin: 5px 0;
+}
+</style>
 </head>
+
 <body>
 
 <h1>Rock 'n Grill</h1>
 <h3>Hamburgueria</h3>
 
-<a class="button" href="https://wa.me/5534984467493" target="_blank">WhatsApp</a>
-<a class="button" href="https://www.instagram.com/rockngrill.ofc/" target="_blank">Instagram</a>
-<a class="button" href="https://www.ifood.com.br/" target="_blank">iFood</a>
+<!-- BOTÕES -->
+<a class="button" href="https://wa.me/5534984467493" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">WhatsApp
+</a>
 
+<a class="button" href="https://www.instagram.com/rockngrill.ofc/" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733558.png">Instagram
+</a>
+
+<a class="button" href="https://www.ifood.com.br/delivery/araguari-mg/rock-n-grill-independencia/33151d68-03fd-4076-b45d-afeaf62d8e56" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/831/831276.png">iFood
+</a>
+
+<!-- MAIS PEDIDOS -->
 <div class="section">
 <h2>🔥 Mais Pedidos</h2>
 
 <div class="box combo">
 <p><b>Combo Rider</b> - R$ 29,90<br>
-🔥 Smash + batata + refri. O mais pedido!
+🔥 Smash + batata + refri gelado.
 </p>
+<a class="button" href="https://wa.me/5534984467493?text=Quero%20o%20Combo%20Rider">Pedir agora</a>
 </div>
 
 <div class="box">
 <p><b>Smash Burnout</b> - R$ 16,90<br>
-🔥 Simples, barato e insano. Pão, carne, queijo e bacon.
+🔥 Simples, barato e insano.
 </p>
+<a class="button" href="https://wa.me/5534984467493?text=Quero%20o%20Smash%20Burnout">Pedir agora</a>
 </div>
 
 <div class="box">
 <p><b>Smash Bacon Ride</b> - R$ 24,90<br>
-🥓🔥 Smash com bacon crocante absurdo.
+🥓🔥 Smash com bacon crocante.
 </p>
+<a class="button" href="https://wa.me/5534984467493?text=Quero%20o%20Smash%20Bacon%20Ride">Pedir agora</a>
 </div>
 
 <div class="box">
 <p><b>Smash Outlaw</b> - R$ 24,90<br>
-🔥 O queridinho da galera!
+🔥 O queridinho da galera.
 </p>
+<a class="button" href="https://wa.me/5534984467493?text=Quero%20o%20Smash%20Outlaw">Pedir agora</a>
 </div>
 
 </div>
 
+<!-- SMASH -->
 <div class="section">
 <h2>Smash Burgers (100g)</h2>
 
@@ -117,93 +188,86 @@ Hambúrguer 100g, bacon, queijo (Prato ou Cheddar), alface, tomate e maionese da
 
 <div class="box">
 <p><b>Smash Outlaw</b> - R$ 24,90<br>
-2 Hambúrgueres 100g, queijo (Prato ou Cheddar), salada e maionese da casa.
+2 hambúrgueres 100g, queijo (Prato ou Cheddar), salada e maionese.
 </p>
 </div>
 
 <div class="box">
 <p><b>Smash Reaper</b> - R$ 32,90<br>
-3 Hambúrgueres 100g, queijo (Prato ou Cheddar), salada e maionese da casa.
+3 hambúrgueres 100g, queijo (Prato ou Cheddar), salada e maionese.
 </p>
 </div>
 
 </div>
 
+<!-- PREMIUM -->
 <div class="section">
 <h2>Burgers Premium (160g)</h2>
 
 <div class="box">
 <p><b>Classic Rider</b> - R$ 25,90<br>
-Hambúrguer 160g, queijo (Prato ou Cheddar), picles, alface, tomate e maionese da casa.
+Hambúrguer 160g, queijo (Prato ou Cheddar), picles, alface, tomate e maionese.
 </p>
 </div>
 
 <div class="box">
 <p><b>Classic Bacon Road</b> - R$ 25,90<br>
-Hambúrguer 160g, queijo (Prato ou Cheddar), bacon, alface, tomate e maionese da casa.
+Hambúrguer 160g, queijo (Prato ou Cheddar), bacon, alface, tomate e maionese.
 </p>
 </div>
 
 <div class="box">
 <p><b>Double Engine</b> - R$ 32,90<br>
-2 Hambúrgueres 160g, queijo (Prato ou Cheddar), picles, alface, tomate e maionese da casa.
+2 hambúrgueres 160g, queijo (Prato ou Cheddar), picles, alface, tomate e maionese.
 </p>
 </div>
 
 <div class="box">
 <p><b>Triple Torque</b> - R$ 41,90<br>
-3 Hambúrgueres 160g, queijo (Prato ou Cheddar), alface, tomate e maionese da casa.
+3 hambúrgueres 160g, queijo (Prato ou Cheddar), alface, tomate e maionese.
 </p>
 </div>
 
 </div>
 
+<!-- PORÇÕES -->
 <div class="section">
 <h2>Porções Extras</h2>
 
 <div class="box">
-<p>Anéis de Cebola Empanados - R$ 15,00</p>
-<p>Batatas Fritas Pequena(100g) - R$ 11,90</p>
-<p>Batatas Fritas Média(200g) - R$ 15,90</p>
-<p>Batatas Fritas Grande(300g) - R$ 19,90</p>
+<p>Anéis de cebola empanados - R$ 15,00</p>
+<p>Batata frita P (100g) - R$ 11,90</p>
+<p>Batata frita M (200g) - R$ 15,90</p>
+<p>Batata frita G (300g) - R$ 19,90</p>
 </div>
 
 </div>
 
+<!-- ADICIONAIS -->
 <div class="section">
 <h2>Adicionais</h2>
 
 <div class="box">
-<p>Hambúrguer Smash 100g - R$ 6,00</p>
-<p>Hambúrguer Classic 160g - R$ 10,00</p>
-<p>Geléia de abacaxi apimentada - R$ 4,00</p>
-<p>Queijo Prato - R$ 5,00</p>
+<p>Hambúrguer smash 100g - R$ 6,00</p>
+<p>Hambúrguer 160g - R$ 10,00</p>
+<p>Queijo prato - R$ 5,00</p>
 <p>Cheddar - R$ 5,00</p>
 <p>Bacon - R$ 6,00</p>
-<p>Anéis de Cebola Empanado - R$ 8,00</p>
-<p><b>Cheese Bomb (Mussarela Empanada)</b> - R$ 12,00</p>
+<p><b>Cheese Bomb (mussarela empanada)</b> - R$ 12,00</p>
 <p>Ovo - R$ 2,00</p>
-<p>Cebola Caramelizada - R$ 2,00</p>
-<p>Maionese da Casa - R$ 3,00</p>
-<p>Sachê de Ketchup, Maionese e Mostarda - R$ 3,00</p>
+<p>Maionese da casa - R$ 3,00</p>
 </div>
 
 </div>
 
+<!-- BEBIDAS -->
 <div class="section">
 <h2>Bebidas</h2>
 
 <div class="box">
-<p><b>Refrigerantes:</b><br>
-Lata 330ml - R$ 7,00<br>
-1L - R$ 10,00<br>
-2L - R$ 15,00
-</p>
-
-<p><b>Sucos:</b><br>
-Del Valle lata - R$ 8,00<br>
-Del Valle 1L - R$ 12,00
-</p>
+<p>Lata 330ml - R$ 7,00</p>
+<p>1L - R$ 10,00</p>
+<p>2L - R$ 15,00</p>
 </div>
 
 </div>
